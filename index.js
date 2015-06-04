@@ -70,7 +70,9 @@ SteamTradeOffers.prototype.getAPIKey = function(callback) {
           uri: 'https://steamcommunity.com/dev/registerkey',
           form: {
             domain: 'localhost',
-            agreeToTerms: 1
+            agreeToTerms: 'agreed',
+            sessionid: this.sessionID,
+            submit: 'Register'
           }
         }, function(error, response, body) {
           self.getAPIKey(callback);
